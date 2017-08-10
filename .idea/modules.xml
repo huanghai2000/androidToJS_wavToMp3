@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CapWindow-master.iml" filepath="$PROJECT_DIR$/CapWindow-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-lame/lib-lame.iml" filepath="$PROJECT_DIR$/lib-lame/lib-lame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/percentlayoutlib/percentlayoutlib.iml" filepath="$PROJECT_DIR$/percentlayoutlib/percentlayoutlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wisdomclassroom/wisdomclassroom.iml" filepath="$PROJECT_DIR$/wisdomclassroom/wisdomclassroom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xutilslibs/xutilslibs.iml" filepath="$PROJECT_DIR$/xutilslibs/xutilslibs.iml" />
+    </modules>
+  </component>
+</project>

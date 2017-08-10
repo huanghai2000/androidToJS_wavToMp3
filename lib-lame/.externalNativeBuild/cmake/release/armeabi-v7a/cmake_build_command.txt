@@ -1,0 +1,15 @@
+Executable : E:\Android_Studio\2.2.3_SDK\cmake\3.6.4111459\bin\cmake.exe
+arguments : 
+-HF:\project_class\CapWindow-master\lib-lame
+-BF:\project_class\CapWindow-master\lib-lame\.externalNativeBuild\cmake\release\armeabi-v7a
+-GAndroid Gradle - Ninja
+-DANDROID_ABI=armeabi-v7a
+-DANDROID_NDK=E:\Android_Studio\2.2.3_SDK\ndk-bundle
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=F:\project_class\CapWindow-master\lib-lame\build\intermediates\cmake\release\obj\armeabi-v7a
+-DCMAKE_BUILD_TYPE=Release
+-DCMAKE_MAKE_PROGRAM=E:\Android_Studio\2.2.3_SDK\cmake\3.6.4111459\bin\ninja.exe
+-DCMAKE_TOOLCHAIN_FILE=E:\Android_Studio\2.2.3_SDK\ndk-bundle\build\cmake\android.toolchain.cmake
+-DANDROID_NATIVE_API_LEVEL=15
+-DCMAKE_CXX_FLAGS=
+jvmArgs : 
+

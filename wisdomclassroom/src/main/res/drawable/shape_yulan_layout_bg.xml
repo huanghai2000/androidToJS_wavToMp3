@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+     <!-- 填充的颜色 -->
+    <solid android:color="#FF9224"/>
+    <!-- 设置边框的颜色的大小 -->
+	<stroke android:width="3dp" android:color="#FF9224"/>
+</shape>

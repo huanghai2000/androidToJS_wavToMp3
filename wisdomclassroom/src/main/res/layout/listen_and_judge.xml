@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_paddingTopPercent="10%h" >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:layout_textSizePercent="4%w"
+            android:text="Dad,where is my book?" />
+
+        <ImageView
+            android:id="@+id/img_content"
+            android:layout_centerHorizontal="true"
+            app:layout_heightPercent="17%w"
+            app:layout_widthPercent="20%w"
+            android:scaleType="fitXY"
+            android:src="@drawable/banner" />
+    </com.king.percent.support.PercentRelativeLayout>
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:id="@+id/choose_layout"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_layout"
+        android:layout_centerHorizontal="true"
+        app:layout_paddingTopPercent="10%h"
+        app:layout_widthPercent="50%w"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/img_right"
+            app:layout_heightPercent="8%w"
+            app:layout_widthPercent="8%w"
+            android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:id="@+id/img_error"
+            android:layout_toRightOf="@+id/img_right"
+            app:layout_heightPercent="8%w"
+            app:layout_marginLeftPercent="35%w"
+            app:layout_widthPercent="8%w"
+            android:scaleType="fitXY"/>
+    </com.king.percent.support.PercentRelativeLayout>
+
+</com.king.percent.support.PercentRelativeLayout>

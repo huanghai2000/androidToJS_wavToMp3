@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <!-- Title栏 -->
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="13%h" >
+
+        <!-- 返回键 -->
+
+        <com.king.percent.support.PercentRelativeLayout
+            android:id="@+id/back_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="10%w" >
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true"
+                app:layout_heightPercent="60%w"
+                app:layout_widthPercent="60%w"
+                android:scaleType="fitXY"
+                android:src="@drawable/back" />
+        </com.king.percent.support.PercentRelativeLayout>
+
+        <!-- 标题 -->
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:layout_textSizePercent="3.2%w"
+            android:text=""
+            android:textColor="@color/black" />
+    </com.king.percent.support.PercentRelativeLayout>
+
+    <com.kingsun.teacherclasspro.widgets.MyPager
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/title_layout"
+        app:layout_heightPercent="100%h"
+        android:background="@color/ripple_material_light"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+
+    <ImageView
+        android:id="@+id/img_record"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/img_pho"
+        android:layout_centerHorizontal="true"
+        app:layout_heightPercent="15%h"
+        app:layout_marginBottomPercent="8%h"
+        app:layout_widthPercent="15%h"
+        android:scaleType="fitCenter"
+        android:src="@drawable/record_img"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/img_play"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/img_pho"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/img_record"
+        app:layout_heightPercent="10%h"
+        app:layout_marginBottomPercent="5%h"
+        app:layout_marginLeftPercent="6%h"
+        app:layout_widthPercent="10%h"
+        android:scaleType="fitCenter"
+        android:src="@drawable/record_img" 
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_up"
+        android:layout_alignParentBottom="true"
+        app:layout_heightPercent="4%w"
+        app:layout_marginBottomPercent="2%h"
+        app:layout_marginLeftPercent="3%w"
+        app:layout_widthPercent="10%w"
+        android:background="@color/ripple_material_light"
+        android:gravity="center"
+        android:text="上一题" />
+
+    <TextView
+        android:id="@+id/tv_down"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:layout_heightPercent="4%w"
+        app:layout_marginBottomPercent="2%h"
+        app:layout_marginRightPercent="3%w"
+        app:layout_widthPercent="10%w"
+        android:background="@color/ripple_material_light"
+        android:gravity="center"
+        android:text="下一题" />
+
+</com.king.percent.support.PercentRelativeLayout>

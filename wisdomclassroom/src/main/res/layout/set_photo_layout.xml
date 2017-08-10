@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="500dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_ip_bg"
+    android:orientation="vertical"
+    android:paddingBottom="25dp" >
+
+    <TextView
+        android:id="@+id/textView_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_photo_title_bg"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_marginLeftPercent="16%w"
+        app:layout_marginRightPercent="16%w"
+        app:layout_marginTopPercent="5%w"
+        android:background="@drawable/shape_photo_onpressed"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:text="相册"
+        android:textColor="@color/color_item_select_color"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView_pz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_marginLeftPercent="16%w"
+        app:layout_marginRightPercent="16%w"
+        app:layout_marginTopPercent="5%w"
+        android:background="@drawable/shape_photo_onpressed"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:text="拍照"
+        android:textColor="@color/color_item_select_color"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        app:layout_marginLeftPercent="16%w"
+        app:layout_marginRightPercent="16%w"
+        app:layout_marginTopPercent="5%w"
+        android:background="@drawable/shape_photo_onpressed"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:text="取消"
+        android:textColor="@color/color_item_select_color"
+        android:textSize="14sp" />
+
+</com.king.percent.support.PercentLinearLayout>

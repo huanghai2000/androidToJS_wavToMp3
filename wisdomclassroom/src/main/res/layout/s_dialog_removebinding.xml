@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_marginLeftPercent="9%w"
+        app:layout_marginRightPercent="9%w"
+        android:background="@drawable/s_shape_bottom_corner_no_top_line_select" >
+
+        <TextView
+            android:id="@+id/textView_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            app:layout_marginTopPercent="3%w"
+            app:layout_textSizePercent="8%w"
+            app:layout_widthPercent="65%w"
+            android:gravity="center"
+            android:text="提示"
+            android:textColor="#7A7A7A" />
+
+        <com.king.percent.support.PercentLinearLayout
+            android:id="@+id/text_tis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title"
+            app:layout_marginLeftPercent="5%w"
+            app:layout_marginRightPercent="5%w"
+            app:layout_marginTopPercent="5%w"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/textView_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                app:layout_marginTopPercent="5%w"
+                app:layout_textSizePercent="7%w"
+                android:gravity="center"
+                android:text="除源进行kjasdsadsadsadsadksaf"
+                android:textColor="#767676" />
+        </com.king.percent.support.PercentLinearLayout>
+
+        <com.king.percent.support.PercentLinearLayout
+            android:id="@+id/button_ll"
+            android:layout_width="match_parent"
+            android:layout_below="@id/text_tis"
+            android:layout_centerHorizontal="true"
+            app:layout_heightPercent="18%w"
+            app:layout_marginTopPercent="2%w"
+            android:gravity="bottom"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button_confirm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:layout_textSizePercent="7%w"
+                android:background="@drawable/s_shape__corner_bottomleft_select"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/button_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:layout_textSizePercent="7%w"
+                android:background="@drawable/s_shape__corner_bottomright_select"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="#79DBF5" />
+        </com.king.percent.support.PercentLinearLayout>
+    </com.king.percent.support.PercentRelativeLayout>
+
+</com.king.percent.support.PercentRelativeLayout>

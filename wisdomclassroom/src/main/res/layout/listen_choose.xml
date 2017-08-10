@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_marginLeftPercent="10%w"
+        app:layout_textSizePercent="4%w"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:text="Dad,where is my book?" />
+
+    <GridView
+        android:id="@+id/gridView_print"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_centerHorizontal="true"
+        android:horizontalSpacing="5dp"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="4"
+        android:scrollbars="none"
+        android:verticalSpacing="10dp" >
+    </GridView>
+
+    <ImageView
+        android:id="@+id/img_record"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/img_pho"
+        android:layout_centerHorizontal="true"
+        app:layout_heightPercent="15%h"
+        app:layout_marginBottomPercent="6%h"
+        app:layout_widthPercent="15%h"
+        android:scaleType="fitCenter"
+        android:src="@drawable/record_img" />
+
+    <ImageView
+        android:id="@+id/img_play"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/img_pho"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/img_record"
+        app:layout_heightPercent="10%h"
+        app:layout_marginBottomPercent="5%h"
+        app:layout_marginLeftPercent="6%h"
+        app:layout_widthPercent="10%h"
+        android:scaleType="fitCenter"
+        android:src="@drawable/record_img" />
+
+</com.king.percent.support.PercentRelativeLayout>

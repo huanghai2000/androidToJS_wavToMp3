@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:hh="http://schemas.android.com/apk/res/com.kingsun.teacherclasspro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ripple_material_light"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true" >
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:id="@+id/prl_join_class_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/img_record" >
+
+        <ListView
+            android:id="@+id/myListView"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="80%w"
+            android:divider="@null"/>
+
+        <!-- 评测结果 -->
+
+        <ImageView
+            android:id="@+id/img_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.king.percent.support.PercentRelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_record"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/img_pho"
+        android:layout_centerHorizontal="true"
+        app:layout_heightPercent="15%h"
+        app:layout_marginBottomPercent="6%h"
+        app:layout_widthPercent="15%h"
+        android:scaleType="fitCenter"
+        android:src="@drawable/record_img" />
+
+    <ImageView
+        android:id="@+id/img_play"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/img_pho"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/img_record"
+        app:layout_heightPercent="10%h"
+        app:layout_marginBottomPercent="5%h"
+        app:layout_marginLeftPercent="6%h"
+        app:layout_widthPercent="10%h"
+        android:scaleType="fitCenter"
+        android:src="@drawable/record_img" />
+
+    <com.king.percent.support.PercentLinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_marginBottomPercent="15%h"
+        app:layout_marginLeftPercent="55%w"
+        android:orientation="horizontal" >
+
+        <!-- 录音时间 -->
+
+        <TextView
+            android:id="@+id/tv_dub_startdub_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            app:layout_marginLeftPercent="3%w"
+            app:layout_paddingBottomPercent="4%w"
+            app:layout_textSizePercent="5%w"
+            android:text="录音中"
+            android:textColor="@color/white" />
+
+        <!-- 进度条 -->
+
+        <ProgressBar
+            android:id="@+id/pb_dub_startdub"
+            android:layout_height="8dp"
+            android:layout_marginLeft="5dp"
+            app:layout_marginTopPercent="1.8%w"
+            app:layout_widthPercent="40%w"
+            android:background="@drawable/pro2"
+            android:indeterminate="false"
+            android:indeterminateOnly="false"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:padding="2dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/record_item_progress" />
+    </com.king.percent.support.PercentLinearLayout>
+
+</com.king.percent.support.PercentRelativeLayout>

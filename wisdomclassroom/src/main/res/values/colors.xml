@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主页面title 颜色值 -->
+    <!-- 浅黑色 -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 主页面title 颜色值 -->
+    <!-- 浅黑色 -->
+    <color name="line_color_gray">#DDDDDD</color>
+    <color name="lightgray">#d3d3d3</color>
+    <color name="s_blue_5799CE">#5799CE</color>
+    <color name="black2">#545454</color>
+    <color name="black3">#666666</color>
+    <color name="black4">#555555</color>
+    <color name="content_bg">#F0F0F0</color>
+    <color name="line_color">#DDDDDD</color>
+    <color name="main_df_bg">#33bdc9</color>
+    <color name="main_login_bf">#EB6557</color>
+    <color name="white">#ffffff</color>
+    <color name="cancer_bg">#a0d468</color>
+    <color name="exit_dilog">#007aff</color>
+    <color name="str_color_black">#333333</color>
+    <color name="black">#000000</color>
+    <color name="vifrification">#00000000</color>
+    <color name="red">#ff0000</color>
+    <color name="blue">#33b5e5</color>
+    <color name="saffron_yellow">#FF9224</color>
+    <color name="ed_bg">#1fa7fd</color>
+    <color name="_6495ED">#667dac</color>
+    <color name="_ff9900">#ff9900</color>
+    <!-- 登录注册 -->
+    <color name="bgColor_loginReg_lightGray">#f5f5f5</color>
+    <color name="bgColor_transparent">#989898</color>
+    <color name="bgColor_modifypsw_result">#A6A5A5</color>
+    <color name="bgCollor_green">#70BCD3</color>
+    <color name="bgCollor_green_darker">#44b6a5</color>
+    <color name="bgCollor_reload">#5f646e</color>
+    <color name="txColor_lightWhite">#f3fbfa</color>
+    <color name="hintColor_gray">#8f9aae</color>
+    <color name="textColor_forgetPsw_gray">#d3d3d3</color>
+    <color name="textColor_declaration">#31a6fb</color>
+    <color name="bg_course_pic">#303955</color>
+    <!-- 个人中心 -->
+    <color name="hint_textmodPsw_gray">#bbbbbb</color>
+    <color name="bg_tv_modPsw_gray">#f3efef</color>
+    <!-- 主图片目录 -->
+    <color name="bg_title_dark_blue">#303955</color>
+    <color name="bg_title_light_blue">#60A7FF</color>
+    <color name="bg_title_light_brown">#D6B476</color>
+    <color name="bg_view_line_grey">#D6D6D6</color>
+    <color name="text_bottomBar_grey">#8E9197</color>
+    <color name="text_title_black">#282828</color>
+    <color name="text_title_grey">#f9a159</color>
+    <color name="bg_title_white">#3b5999</color>
+    <!-- 点读 -->
+    <color name="page_container_outline">#FF33E5B5</color>
+    <color name="bg_title_orange">#F89240</color>
+    <color name="bg_light_grey">#F3EFEF</color>
+    <color name="bg_score_red">#EB6557</color>
+    <color name="bg_dark_grey">#6F6F6F</color>
+    <!-- viewpager下方圆点选中的颜色 -->
+    <color name="dot_checked">#4cc9b6</color>
+    <!-- viewpager下方圆点未选中的颜色 -->
+    <color name="dot_unchecked">#bdbdbd</color>
+    <color name="translucent">#00ffffff</color>
+    <color name="app_bg">#28B9C6</color>
+    <color name="view_gray">#dddddd</color>
+    <color name="start_text_bg">#90949c</color>
+    <color name="tv_bg">#3366cc</color>
+    <color name="onclick_back">#0099cc</color>
+</resources>

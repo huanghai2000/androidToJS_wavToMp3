@@ -1,0 +1,3 @@
+F:/project_class/CapWindow-master/lib-lame/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/lamemp3.dir
+F:/project_class/CapWindow-master/lib-lame/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+F:/project_class/CapWindow-master/lib-lame/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/img_bg"
+            android:layout_centerHorizontal="true"
+            app:layout_heightPercent="11.4%w"
+            app:layout_widthPercent="63%w"
+            android:background="@drawable/start_bg"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_bg"
+            android:layout_centerHorizontal="true"
+            app:layout_marginTopPercent="5%w"
+            app:layout_textSizePercent="2.5%w"
+            android:text="智      慧      学      习          阳      光      未      来"
+            android:textColor="@color/start_text_bg" />
+    </com.king.percent.support.PercentRelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="@drawable/start_bg"
+        android:scaleType="fitCenter" />
+
+</com.king.percent.support.PercentRelativeLayout>

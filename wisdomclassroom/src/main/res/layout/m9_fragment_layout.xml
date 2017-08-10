@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ListView
+        android:id="@+id/content_listView"
+        android:layout_centerHorizontal="true"
+        app:layout_heightPercent="60%h"
+        app:layout_widthPercent="60%w"
+        android:divider="@null" >
+    </ListView>
+
+    <GridView
+        android:id="@+id/gridView_print"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/content_listView"
+        android:layout_centerHorizontal="true"
+        app:layout_marginBottomPercent="10%h"
+        app:layout_widthPercent="60%w"
+        android:background="@color/blue"
+        android:horizontalSpacing="5dp"
+        android:numColumns="10"
+        android:scrollbars="none"
+        android:verticalSpacing="5dp" >
+    </GridView>
+
+</com.king.percent.support.PercentRelativeLayout>

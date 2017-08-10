@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        applicationId "com.kingsun.teacherclasspro"
+        minSdkVersion 21
+        targetSdkVersion 22
+        versionCode 32
+        versionName "2.9.106"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters  "armeabi-v7a"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/ant.jar')
+    compile files('libs/gson-2.2.4.jar')
+    compile files('libs/myjson.jar')
+    compile files('libs/universal-image-loader-1.9.3.jar')
+    compile files('libs/volley.jar')
+    compile project(':percentlayoutlib')
+    compile files('libs/httpmime-4.1.3.jar')
+    compile project(':xutilslibs')
+    compile project(':lib-lame')
+    compile files('libs/ssound.jar')
+}

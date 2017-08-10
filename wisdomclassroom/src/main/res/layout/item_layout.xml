@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_controller"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <!-- <com.king.percent.support.PercentRelativeLayout -->
+    <!-- android:layout_centerInParent="true" -->
+    <!-- app:layout_heightPercent="30%w" -->
+    <!-- app:layout_widthPercent="40%w" > -->
+
+
+    <!-- <uk.co.senab.photoview.PhotoView -->
+    <!-- android:id="@+id/imgView" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:scaleType="fitXY" /> -->
+    <!-- </com.king.percent.support.PercentRelativeLayout> -->
+
+    <uk.co.senab.photoview.PhotoView
+        android:id="@+id/imgView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+</com.king.percent.support.PercentRelativeLayout>

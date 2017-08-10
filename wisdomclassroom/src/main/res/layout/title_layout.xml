@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relat_title"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/tv_bg" >
+
+    <RelativeLayout
+        android:id="@+id/head_layout"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_finsh"
+        android:gravity="center|left" >
+
+        <!-- 返回图标 -->
+
+        <TextView
+            android:id="@+id/back_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/fanhui" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_titles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/title_searche_layout"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/back_finsh"
+        android:visibility="invisible" >
+
+        <!-- 返回图标 -->
+
+        <ImageView
+            android:id="@+id/search_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="18dp"
+            android:scaleType="fitXY" 
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</RelativeLayout>

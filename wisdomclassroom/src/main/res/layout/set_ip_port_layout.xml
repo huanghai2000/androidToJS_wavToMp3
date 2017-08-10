@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/shape_ip_bg" >
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+
+        <!-- app:layout_heightPercent="8%h" -->
+
+        <com.king.percent.support.PercentRelativeLayout
+            android:id="@+id/layout1"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:layout_widthPercent="60%w"
+            android:background="@drawable/shape_edtext_bg"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp" >
+
+            <com.kingsun.teacherclasspro.widgets.AtuoCompleteTextView
+                android:id="@+id/ed_yuming"
+                style="@style/edit_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:digits="@string/register_pwd_digits"
+                android:singleLine="true"
+                android:text="http://"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <com.kingsun.teacherclasspro.widgets.AtuoCompleteTextView
+                android:id="@+id/ed_ip"
+                style="@style/edit_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ed_yuming"
+                android:digits="@string/register_pwd_digits"
+                android:gravity="center|left"
+                android:hint="请输入域名"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </com.king.percent.support.PercentRelativeLayout>
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout1"
+            android:layout_centerHorizontal="true"
+            app:layout_marginTopPercent="10%h"
+            app:layout_widthPercent="60%w"
+            android:background="@drawable/shape_edtext_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </com.king.percent.support.PercentRelativeLayout>
+
+    <TextView
+        android:id="@+id/version_tv"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:layout_widthPercent="60%w"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text=""
+        android:textColor="@color/black2"
+        android:textSize="16sp" />
+
+</com.king.percent.support.PercentRelativeLayout>

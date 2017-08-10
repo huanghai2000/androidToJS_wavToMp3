@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:hh="http://schemas.android.com/apk/res/com.kingsun.teacherclasspro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            app:layout_textSizePercent="3%w"
+            android:text="【Brid】"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            app:layout_textSizePercent="2%w"
+            android:text="Good morming"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@+id/tv_content"
+            app:layout_textSizePercent="2%w"
+            android:gravity="right"
+            android:text="92分"
+            android:textColor="@color/white" />
+    </com.king.percent.support.PercentRelativeLayout>
+
+</com.king.percent.support.PercentRelativeLayout>

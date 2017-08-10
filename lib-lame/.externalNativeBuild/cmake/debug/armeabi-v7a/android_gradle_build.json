@@ -1,0 +1,46 @@
+
+{
+	"buildFiles" : [ "F:/project_class/CapWindow-master/lib-lame/CMakeLists.txt" ],
+	"cleanCommands" : 
+	[
+		"E:\\Android_Studio\\2.2.3_SDK\\cmake\\3.6.4111459\\bin\\cmake.exe --build F:\\project_class\\CapWindow-master\\lib-lame\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"lamemp3-Debug-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "lamemp3",
+			"buildCommand" : "E:\\Android_Studio\\2.2.3_SDK\\cmake\\3.6.4111459\\bin\\cmake.exe --build F:\\project_class\\CapWindow-master\\lib-lame\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target lamemp3",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=E:/Android_Studio/2.2.3_SDK/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=E:/Android_Studio/2.2.3_SDK/ndk-bundle/sysroot  -Dlamemp3_EXPORTS -I..\\..\\..\\..\\libs\\include -isystem E:\\Android_Studio\\2.2.3_SDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem E:\\Android_Studio\\2.2.3_SDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\armeabi-v7a\\include -isystem E:\\Android_Studio\\2.2.3_SDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -isystem E:/Android_Studio/2.2.3_SDK/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=15 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -std=gnu++11 -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "F:/project_class/CapWindow-master/lib-lame/src/main/cpp/lamemp3.cpp",
+					"workingDirectory" : "F:/project_class/CapWindow-master/lib-lame/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				}
+			],
+			"output" : "F:/project_class/CapWindow-master/lib-lame/build/intermediates/cmake/debug/obj/armeabi-v7a/liblamemp3.so",
+			"toolchain" : "4077616915"
+		},
+		"mp3lame-Debug-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "mp3lame",
+			"buildType" : "debug",
+			"output" : "../../../../libs/armeabi-v7a/libmp3lame.so",
+			"toolchain" : "4077616915"
+		}
+	},
+	"toolchains" : 
+	{
+		"4077616915" : 
+		{
+			"cCompilerExecutable" : "E:/Android_Studio/2.2.3_SDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "E:/Android_Studio/2.2.3_SDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}
