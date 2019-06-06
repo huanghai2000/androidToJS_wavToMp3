@@ -84,7 +84,6 @@ public class JobActivity extends BaseActivity implements OnClickListener{
 		initView();
 		if (arg0 != null) {
 			SortquestionList = (ArrayList<Question>) arg0.getSerializable("Bean");
-//			fragmentList = (ArrayList<Fragment>) arg0.getSerializable("Fragment");
 			currentIndex = arg0.getInt("index");
 			if (SortquestionList != null) {
 				notifyDate(currentIndex);
