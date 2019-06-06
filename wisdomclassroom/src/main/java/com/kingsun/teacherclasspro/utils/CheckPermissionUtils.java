@@ -7,7 +7,7 @@ import android.media.MediaRecorder;
 import android.util.Log;
 
 public class CheckPermissionUtils {
-	private static final String TAG = "CheckPermissionUtils";
+	private static final String TAG = "MainActivity";
 	private static CheckPermissionUtils checkPermissionUtils = new CheckPermissionUtils();
 	static final int SAMPLE_RATE_IN_HZ = 44100;
 	static final int BUFFER_SIZE = AudioRecord.getMinBufferSize(SAMPLE_RATE_IN_HZ, AudioFormat.CHANNEL_IN_DEFAULT,
@@ -59,8 +59,8 @@ public class CheckPermissionUtils {
 				// 平方和除以数据总长度，得到音量大小。
 				double mean = v / (double) r;
 				double volume = 10 * Math.log10(mean);
-//				 Log.d(TAG, "-------分贝值:" +volume+"----v"+v+"------r"+r );
-				if (v > 0 && r > 0) {
+				 Log.d(TAG, "-------分贝值:" +volume+"----v"+v+"------r"+r );
+				if (v >= 0 && r > 0) {
 					// 有录音
 					isHasPermission = true;
 					mAudioRecord.stop();

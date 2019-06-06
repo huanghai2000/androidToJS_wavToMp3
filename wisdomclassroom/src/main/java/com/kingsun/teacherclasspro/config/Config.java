@@ -7,23 +7,7 @@ package com.kingsun.teacherclasspro.config;
 public class Config {
 	// public static final String AppID = "TKS0213";//教师端
 	public static final String AppID = "SKS0213";// 学生端
-	//	public static final String IP = "http://192.168.2.6:5050";// 测试机地址1	
-	//	public static final String IP = "http://192.168.3.2:6060";// 测试机地址2	
-	//	public static final String IP = "http://192.168.3.94:6001";// 于成全机器地址
-	//	public static final String IP = "http://192.168.3.107:8023";// 开发机地址	
-	//	public static final String IP = "http://192.168.3.100:8022";// 开发机地址	
-	//	public static final String IP = "http://192.168.3.107:8002";// 开发机地址	
-	//	public static final String IP = "http://192.168.3.100:8003";// 开发机地址2
-	//	public static final String IP = "http://192.168.3.100:8004";// 开发机地址2
-	//	public static final String IP = "http://192.168.3.116:6426";// 开发机地址2
-	//	public static final String IP = "http://yjxbackup.kingsun.cn/";// 外网地址2/
-	//	public static final String IP = "http://yjxbackup.kingsunedu.com/";// 外网地址3
-	//	public static final String IP = "http://yjx.kingsun.cn/";// 外网地址
 	public static final String IP = "http://yjx.kingsunedu.com/";// 外网地址2(正式站点)
-	//	public static final String IP = "http://192.168.3.20:8101/";// 负载均衡测试站点
-
-	//	public static final String IP = "http://119.145.5.77:5050";// 送测地址	
-	//	public static final String APIUrl = IP+"/SunnyTask/Api/"; //                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 	public static final String APIUrl =IP+"/SunnyTask/Api/"; //
 	public static final String LoginByName = APIUrl + "Account/LoginByUserName";
 	public static final String FeedBackUrl = APIUrl + "Account/SendFeedback";// 反馈URL

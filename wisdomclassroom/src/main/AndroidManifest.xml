@@ -25,20 +25,22 @@
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
     <!-- 新加 -->
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 
     <application
         android:name="com.kingsun.teacherclasspro.application.MyApplication"
         android:allowBackup="true"
-        android:icon="@drawable/app_icon"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.kingsun.teacherclasspro.activity.MainActivity"
-            android:screenOrientation="landscape"
-            android:windowSoftInputMode="adjustPan" >
+        android:name="com.kingsun.teacherclasspro.activity.MainActivity"
+        android:screenOrientation="landscape"
+        android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <activity
@@ -46,6 +48,7 @@
             android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustPan" >
         </activity>
+        <!--android:name="com.kingsun.teacherclasspro.activity.StartActivityAty"-->
         <activity
             android:name="com.kingsun.teacherclasspro.activity.StartActivityAty"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -55,6 +58,24 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.kingsun.teacherclasspro.activity.LoginActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+
+        <activity
+            android:name="com.kingsun.teacherclasspro.activity.BookListAcivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+
+        <activity
+            android:name="com.kingsun.teacherclasspro.activity.TestAty"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" >
         </activity>
 
         <!--<service-->
@@ -81,7 +102,29 @@
             android:windowSoftInputMode="adjustResize|stateHidden" >
         </activity>
 
-        <service android:name="com.kingsun.teacherclasspro.utils.DownloadService" ></service>
+        <!--开机启动广播-->
+        <!--<receiver-->
+            <!--android:name="com.kingsun.teacherclasspro.receiver.BootBroadcastReceiver"-->
+            <!--android:exported="true">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
+            <!--</intent-filter>-->
+
+            <!--<intent-filter >-->
+                <!--<action android:name="android.intent.action.MEDIA_MOUNTED"/>-->
+                <!--<action android:name="android.intent.action.MEDIA_UNMOUNTED"/>-->
+                <!--<data android:scheme="file"/>-->
+            <!--</intent-filter>-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.PACKAGE_ADDED" />-->
+                <!--<action android:name="android.intent.action.PACKAGE_REMOVED" />-->
+                <!--<action android:name="android.intent.action.PACKAGE_REPLACED" />-->
+                <!--<data android:scheme="package" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <service android:name="com.kingsun.teacherclasspro.utils.DownloadService"/>
+        <service android:name="com.kingsun.teacherclasspro.utils.FileTransminssionService"/>
     </application>
 
 </manifest>

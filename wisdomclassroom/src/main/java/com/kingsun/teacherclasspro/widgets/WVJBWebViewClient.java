@@ -34,7 +34,7 @@ public class WVJBWebViewClient extends WebViewClient {
 	private static final String kInterface = kTag + "Interface";
 	private static final String kCustomProtocolScheme = "wvjbscheme";
 	private static final String kQueueHasMessage = "__WVJB_QUEUE_MESSAGE__";
-	private static boolean logging = false;
+	private static boolean logging = true;
 	protected WebView webView;
 	private ArrayList<WVJBMessage> startupMessageQueue = null;
 	private Map<String, WVJBResponseCallback> responseCallbacks = null;
@@ -80,13 +80,14 @@ public class WVJBWebViewClient extends WebViewClient {
 //		this.webView.getSettings().setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
 //		this.webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 //		this.webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-		if(Build.VERSION.SDK_INT >= 19) {  
-			/*对系统API在19以上的版本作了兼容。因为4.4以上系统在onPageFinished时再恢复图片加载时,如果存在多张图片引用的是相同的src时，会只有一个image标签得到加载，因而对于这样的系统我们就先直接加载。*/        webView.getSettings().setLoadsImagesAutomatically(true);  
+		if(Build.VERSION.SDK_INT > 19) {
+			/*对系统API在19以上的版本作了兼容。因为4.4以上系统在onPageFinished时再恢复图片加载时,如果存在多张图片引用的是相同的src时，会只有一个image标签得到加载，因而对于这样的系统我们就先直接加载。*/
+			webView.getSettings().setLoadsImagesAutomatically(true);
 		} else {  
 			webView.getSettings().setLoadsImagesAutomatically(false);  
 		}  
 
-		this.webView.addJavascriptInterface(myInterface, kInterface);
+//		this.webView.addJavascriptInterface(myInterface, kInterface);
 		this.responseCallbacks = new HashMap<String, WVJBResponseCallback>();
 		this.messageHandlers = new HashMap<String, WVJBHandler>();
 		this.startupMessageQueue = new ArrayList<WVJBMessage>();
@@ -240,10 +241,13 @@ public class WVJBWebViewClient extends WebViewClient {
 				if (message == null) {
 					return;
 				}
-				log("RCVD", "handlerName = "+message.handlerName);
-				if (message.handlerName!= null &&message.handlerName.startsWith("loginName") &&
-						message.data != null) {
+				Log.i(kTag,"handlerName = "+message.handlerName);
+				if (message.handlerName!= null &&message.handlerName.startsWith("loginName")) {
+					handler.sendEmptyMessage(103);
 					MyApplication.getInstance().setLoginName((String)message.data);
+				}
+				if (message.handlerName!= null &&message.handlerName.startsWith("Islogin")) {
+					handler.sendEmptyMessage(102);
 				}
 				if (message.responseId != null) {
 					WVJBResponseCallback responseCallback = responseCallbacks.remove(message.responseId);
@@ -276,6 +280,7 @@ public class WVJBWebViewClient extends WebViewClient {
 				}
 			}
 		} catch (Exception e) {
+			Log.i(kTag,"json 解析异常");
 			e.printStackTrace();
 		}
 	}
@@ -329,7 +334,7 @@ public class WVJBWebViewClient extends WebViewClient {
 	 * 
 	 * loginOut( 注入js代码，在注入代码的同时需要清除本地缓存的数据) TODO(这里描述这个方法适用条件 – 使用挤下线等异常通知) TODO(这里描述这个方法的执行流程 – 收到心跳包-解析 -根据解析内容进行广播) TODO(这里描述这个方法的使用方法 – 直接调用) TODO(这里描述这个方法的注意事项 – 注意，loginOut.js.txt 不能清空，不需要对内容进行修改)
 	 * 
-	 * @param zhanglu
+	 * @param
 	 * @param @return 设定文件
 	 * @return String DOM对象
 	 * @Exception 异常对象
@@ -386,6 +391,12 @@ public class WVJBWebViewClient extends WebViewClient {
 				handler.sendEmptyMessage(101);
 			}if (url.contains("ChangePswd.aspx")) {
 				handler.sendEmptyMessage(102);
+			}if (url.contains("PersonCenter/Index1.aspx")){
+				//返回了个人中心
+				handler.sendEmptyMessage(103);
+			}else{
+				//告诉页面用户密码
+				handler.sendEmptyMessage(10000);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -455,7 +466,6 @@ public class WVJBWebViewClient extends WebViewClient {
 		if (url.startsWith(kCustomProtocolScheme)) {
 			if (url.indexOf(kQueueHasMessage) > 0) {
 				flushMessageQueue();
-				//				handler.sendEmptyMessage(HandlerStrings.MAIN_WEBVIEW_STARTAPP);
 			}
 			return true;
 		}
@@ -467,6 +477,11 @@ public class WVJBWebViewClient extends WebViewClient {
 		}
 		webView.clearCache(true);// 清除网页访问留下的缓存，由于内核缓存是全局的因此这个方法不仅仅针对webview而是针对整个应用程序.
 		return super.shouldOverrideUrlLoading(view, url);
+	}
+
+	@Override
+	public void onScaleChanged(WebView view, float oldScale, float newScale) {
+		super.onScaleChanged(view, oldScale, newScale);
 	}
 
 	public static class WVJBMessage {

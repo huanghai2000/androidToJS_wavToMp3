@@ -9,6 +9,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
 
+import com.franmontiel.persistentcookiejar.ClearableCookieJar;
+import com.franmontiel.persistentcookiejar.PersistentCookieJar;
+import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
+import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 import com.kingsun.teacherclasspro.R;
 import com.kingsun.teacherclasspro.utils.CrashHandler;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
@@ -22,11 +26,21 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import com.nostra13.universalimageloader.utils.StorageUtils;
+import com.kingsun.teacherclasspro.bean.LoginBean;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.https.HttpsUtils;
+import com.zhy.http.okhttp.log.LoggerInterceptor;
 
 import org.xutils.x;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSession;
+
+import okhttp3.OkHttpClient;
 
 import static android.os.Process.myTid;
 
@@ -39,9 +53,129 @@ public class MyApplication extends Application  {
 	private static Typeface mSHtypeface = null;
 	private static Typeface mPinyingtypeface = null;
 	private String  loginName;//登录用户名
-	private  int  mNetWorkState;//网络状态
+	private int  mNetWorkState;//网络状态
+	private String SubjectID;
+	private String GradeID;
+	private String ClassID;
+	private String BookID;
+	private String userName;
+	private String className;
+	private String userPWD;
+	private String Token;
+	private boolean isGoToIK;//是否跳转到IK的程序
+
+	public String getToken() {
+		return Token;
+	}
+
+	public void setToken(String token) {
+		Token = token;
+	}
+
+	public ArrayList<String> getMsgList() {
+		return msgList;
+	}
+
+	public void setMsgList(ArrayList<String> msgList) {
+		this.msgList = msgList;
+	}
+
+	private ArrayList<String> msgList ;//消息队列
+
+	public boolean isGoToIK() {
+		return isGoToIK;
+	}
+
+	public void setGoToIK(boolean goToIK) {
+		isGoToIK = goToIK;
+	}
+
+	public boolean isOpenIK() {
+		return isOpenIK;
+	}
+
+	public void setOpenIK(boolean openIK) {
+		isOpenIK = openIK;
+	}
+
+	private boolean isOpenIK;//是否开启易课
+	public String getClassID() {
+		return ClassID;
+	}
+
+	public void setClassID(String classID) {
+		ClassID = classID;
+	}
+
+	public String getGradeID() {
+		return GradeID;
+	}
+
+	public void setGradeID(String gradeID) {
+		GradeID = gradeID;
+	}
+
+	public String getSubjectID() {
+		return SubjectID;
+	}
+
+	public void setSubjectID(String subjectID) {
+		SubjectID = subjectID;
+	}
+	public String getBookID() {
+		return BookID;
+	}
+
+	public void setBookID(String bookID) {
+		BookID = bookID;
+	}
+
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
+	}
+
+
+	public String getUserPWD() {
+		return userPWD;
+	}
+
+	public void setUserPWD(String userPWD) {
+		this.userPWD = userPWD;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public int getCurrentIndex() {
+		return currentIndex;
+	}
+
+	public void setCurrentIndex(int currentIndex) {
+		this.currentIndex = currentIndex;
+	}
+
+	private int currentIndex;
+
+	public String getUserID() {
+		return userID;
+	}
+
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
+
+	private String userID;
 	private boolean isLog = false;//是否开启错误日志
-	
+
 	public String getLoginName() {
 		return loginName;
 	}
@@ -57,6 +191,17 @@ public class MyApplication extends Application  {
 	public void setmNetWorkState(int mNetWorkState) {
 		this.mNetWorkState = mNetWorkState;
 	}
+
+	public LoginBean getLoginBean() {
+		return LoginBean;
+	}
+
+	public void setLoginBean(LoginBean loginBean) {
+		LoginBean = loginBean;
+	}
+
+	private com.kingsun.teacherclasspro.bean.LoginBean LoginBean;//保存登录信息
+
 
 	/****请求头*****/
 	public String server_head ;//网络测试环境
@@ -124,6 +269,29 @@ public class MyApplication extends Application  {
 		x.Ext.init(this);// 初始化xutil3配置
 		// 初始化图片缓存
 		initImageLoader(getApplicationContext());
+
+		//初始化OkHTTP
+		ClearableCookieJar cookieJar1 = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getApplicationContext()));
+
+		HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, null, null);
+
+//        CookieJarImpl cookieJar1 = new CookieJarImpl(new MemoryCookieStore());
+		OkHttpClient okHttpClient = new OkHttpClient.Builder()
+				.connectTimeout(5000L, TimeUnit.MILLISECONDS)
+				.readTimeout(5000L, TimeUnit.MILLISECONDS)
+				.addInterceptor(new LoggerInterceptor("TAG"))
+				.cookieJar(cookieJar1)
+				.hostnameVerifier(new HostnameVerifier()
+				{
+					@Override
+					public boolean verify(String hostname, SSLSession session)
+					{
+						return true;
+					}
+				})
+				.sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
+				.build();
+		OkHttpUtils.initClient(okHttpClient);
 	}
 
 
@@ -132,17 +300,17 @@ public class MyApplication extends Application  {
 	public static ImageLoader initImageLoader(Context context) {
 		ImageLoader imageLoader = ImageLoader.getInstance();
 		DisplayImageOptions options = new DisplayImageOptions.Builder()
-		// .showImageOnLoading(R.drawable.photo3)
-		// .showImageForEmptyUri(R.drawable.photo3)
-		// .showImageOnFail(R.drawable.photo3).cacheInMemory()
-		.imageScaleType(ImageScaleType.IN_SAMPLE_INT).displayer(new FadeInBitmapDisplayer(300)).cacheOnDisc()
-		.bitmapConfig(Bitmap.Config.RGB_565).build();
-		File cacheDir = StorageUtils.getOwnCacheDirectory(context, "Farben/Cache");// 缓存地址
+				// .showImageOnLoading(R.drawable.photo3)
+				// .showImageForEmptyUri(R.drawable.photo3)
+				// .showImageOnFail(R.drawable.photo3).cacheInMemory()
+				.imageScaleType(ImageScaleType.IN_SAMPLE_INT).displayer(new FadeInBitmapDisplayer(300)).cacheOnDisc()
+				.bitmapConfig(Bitmap.Config.RGB_565).build();
+		File cacheDir = StorageUtils.getOwnCacheDirectory(context, "KingSunSmart/Cache");// 缓存地址
 		ImageLoaderConfiguration config = (new ImageLoaderConfiguration.Builder(context)
-		.threadPriority(Thread.NORM_PRIORITY - 1).threadPoolSize(4).denyCacheImageMultipleSizesInMemory()
-		.memoryCache(new WeakMemoryCache()).memoryCacheSize(1 * 1024 * 100)
-		.discCacheFileNameGenerator(new Md5FileNameGenerator()).discCache(new UnlimitedDiscCache(cacheDir))
-		.tasksProcessingOrder(QueueProcessingType.LIFO)).defaultDisplayImageOptions(options).build();
+				.threadPriority(Thread.NORM_PRIORITY - 1).threadPoolSize(4).denyCacheImageMultipleSizesInMemory()
+				.memoryCache(new WeakMemoryCache()).memoryCacheSize(1 * 1024 * 10)
+				.discCacheFileNameGenerator(new Md5FileNameGenerator()).discCache(new UnlimitedDiscCache(cacheDir))
+				.tasksProcessingOrder(QueueProcessingType.LIFO)).defaultDisplayImageOptions(options).build();
 		imageLoader.getInstance().init(config);
 		return imageLoader;
 	}
@@ -157,16 +325,16 @@ public class MyApplication extends Application  {
 				.cacheOnDisc().bitmapConfig(Bitmap.Config.RGB_565).build();
 		File cacheDir = StorageUtils.getOwnCacheDirectory(context, "KingSoft/Cache");// 缓存地址
 		ImageLoaderConfiguration config = (new ImageLoaderConfiguration.Builder(context)
-		.threadPriority(Thread.NORM_PRIORITY - 1).threadPoolSize(4).denyCacheImageMultipleSizesInMemory()
-		.memoryCache(new WeakMemoryCache()).memoryCacheSize(1 * 1024 * 100)
-		.discCacheFileNameGenerator(new Md5FileNameGenerator()).discCache(new UnlimitedDiscCache(cacheDir))
-		.tasksProcessingOrder(QueueProcessingType.LIFO)).defaultDisplayImageOptions(options).build();
+				.threadPriority(Thread.NORM_PRIORITY - 1).threadPoolSize(4).denyCacheImageMultipleSizesInMemory()
+				.memoryCache(new WeakMemoryCache()).memoryCacheSize(1 * 1024 * 100)
+				.discCacheFileNameGenerator(new Md5FileNameGenerator()).discCache(new UnlimitedDiscCache(cacheDir))
+				.tasksProcessingOrder(QueueProcessingType.LIFO)).defaultDisplayImageOptions(options).build();
 		imageLoader.getInstance().init(config);
 		return imageLoader;
 	}
 	/**
 	 * 判断网络是否可用
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isNetworkConnected() {

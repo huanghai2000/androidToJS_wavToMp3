@@ -80,24 +80,17 @@ public class JobActivity extends BaseActivity implements OnClickListener{
 	@Override
 	protected void onCreate( Bundle arg0) {
 		super.onCreate(arg0);
-		BaseActivity.Ilog(TAG, "onCreate == ");
 		setContentView(R.layout.job_activity);
 		initView();
 		if (arg0 != null) {
-			BaseActivity.Ilog(TAG, "onCreate == 111");
 			SortquestionList = (ArrayList<Question>) arg0.getSerializable("Bean");
 //			fragmentList = (ArrayList<Fragment>) arg0.getSerializable("Fragment");
 			currentIndex = arg0.getInt("index");
 			if (SortquestionList != null) {
-				Gson gson = new Gson();
-				final String jsonString = gson.toJson(SortquestionList.get(currentIndex));
-//				BaseActivity.Ilog(TAG, jsonString);
-				BaseActivity.Ilog(TAG, "onCreate =222=  +"+SortquestionList.size()+"; frgemt "+fragmentList.size());
 				notifyDate(currentIndex);
 			}
 		}else{
 			if (SortquestionList == null || SortquestionList.size() == 0) {
-				BaseActivity.Ilog(TAG, "onCreate == 重新请求数据");
 				initData();
 				ToastUtils.showToast(getApplicationContext(), "开始请求数据");
 			}

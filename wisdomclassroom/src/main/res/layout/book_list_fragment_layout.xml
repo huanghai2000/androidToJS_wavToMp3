@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/bgColor_loginReg_lightGray">
+
+    <GridView
+        android:id="@+id/_gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        android:layout_margin="20dp"
+        android:background="@color/bgColor_loginReg_lightGray"
+        android:horizontalSpacing="20dp"
+        android:numColumns="3"
+        android:padding="0dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="20dp" />
+
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:id="@+id/noData_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgColor_loginReg_lightGray"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img_notic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/no_data_icn"
+            android:layout_centerHorizontal="true"
+            app:layout_widthPercent="19.6%w"
+            app:layout_heightPercent="15.8%w"
+            app:layout_marginTopPercent="7%w"
+            android:scaleType="fitXY"/>
+        <TextView
+            android:id="@+id/tv_noData"
+            android:layout_below="@id/img_notic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂无任何教材内容"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/_b4c0d6"
+            app:layout_textSizePercent="2.8%w"
+            android:layout_centerInParent="true"/>
+    </com.king.percent.support.PercentRelativeLayout>
+
+</com.king.percent.support.PercentRelativeLayout>

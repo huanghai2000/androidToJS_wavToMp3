@@ -1,28 +1,61 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.neenbedankt.android-apt'
 android {
-    compileSdkVersion 22
-    buildToolsVersion '25.0.0'
-
-    defaultConfig {
-        applicationId "com.kingsun.teacherclasspro"
-        minSdkVersion 21
-        targetSdkVersion 22
-        versionCode 32
-        versionName "2.9.106"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        ndk {
-            abiFilters  "armeabi-v7a"
+    repositories {
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots'
         }
     }
+    android {
+        compileSdkVersion 22
+        buildToolsVersion '25.0.0'
+        signingConfigs {
+            release {
+                storeFile file('D:/DP/project_class/kingsunsoft_teacher.jks')
+                keyAlias "kingsunsoft"
+                keyPassword "kingsunsoft2018"
+                storePassword "kingsunsoft2018"
+            }
+        }
+        defaultConfig {
+            applicationId "com.kingsun.teacherclasspro"
+            minSdkVersion 15
+            targetSdkVersion 22
+            versionCode 3
+            versionName '1.2.4'
+            testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_7
+                targetCompatibility JavaVersion.VERSION_1_7
+            }
+            multiDexEnabled true
+            ndk {
+                abiFilters "armeabi-v7a","arm64-v8a","armeabi","x86"
+            }
+        }
+        lintOptions {
+            checkReleaseBuilds false
+            abortOnError false
+            disable "ResourceType"
+        }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        buildTypes {
+            debug {//测试下的配置
+                minifyEnabled false
+//            shrinkResources false
+                signingConfig signingConfigs.release
+            }
+            release {//正式环境
+                minifyEnabled false  // false表示不混淆，true表示混淆
+//            shrinkResources true //移除无用的resource文件
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                signingConfig signingConfigs.release
+            }
+        }
+        sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+        productFlavors {
         }
     }
-    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
 }
 
 dependencies {
@@ -42,4 +75,10 @@ dependencies {
     compile project(':xutilslibs')
     compile project(':lib-lame')
     compile files('libs/ssound.jar')
+    compile 'com.jakewharton:butterknife:6.1.0'
+    compile files('libs/java-unrar-0.2.jar')
+    compile files('libs/glide-3.6.1.jar')
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'
+    compile 'com.github.franmontiel:PersistentCookieJar:v0.9.3'
+    compile project(':okhttputils')
 }

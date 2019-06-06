@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        app:layout_marginBottomPercent="3%w"
+        android:text="© 2017 深圳方直科技股份有限公司"
+        android:textColor="@color/black5"
+        android:textSize="18sp"/>
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_ip_bg"
+        app:layout_widthPercent="34%w"
+        app:layout_heightPercent="29.5%w"
+        app:layout_marginTopPercent="13.9%w"
+        app:layout_marginLeftPercent="28.4%w">
+
+        <com.king.percent.support.PercentRelativeLayout
+            android:id="@+id/name_layout"
+            app:layout_marginTopPercent="10%w"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shape_login_bg"
+            app:layout_widthPercent="80%w"
+            app:layout_heightPercent="14%w">
+
+            <ImageView
+                android:id="@+id/img_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_heightPercent="8.4%w"
+                app:layout_marginLeftPercent="5%w"
+                app:layout_widthPercent="7%w"
+                android:scaleType="fitXY"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/login_account_a" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/img_name"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/line_color"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/ed_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入账号"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:layout_textSizePercent="5.5%w"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:gravity="center|left"
+                android:textCursorDrawable="@null"
+                android:text="1521374"
+                android:background="@color/white"
+                android:maxLength="16"
+                android:layout_toRightOf="@id/view1"/>
+
+        </com.king.percent.support.PercentRelativeLayout>
+
+        <com.king.percent.support.PercentRelativeLayout
+            android:layout_below="@id/name_layout"
+            android:id="@+id/pwd_layout"
+            app:layout_marginTopPercent="8%w"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shape_login_bg"
+            app:layout_widthPercent="80%w"
+            app:layout_heightPercent="14%w"
+            >
+            <ImageView
+                android:id="@+id/img_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_heightPercent="8.4%w"
+                app:layout_marginLeftPercent="5%w"
+                app:layout_widthPercent="7%w"
+                android:scaleType="fitXY"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/login_account_p" />
+
+
+            <EditText
+                android:id="@+id/ed_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入密码"
+                android:layout_marginLeft="5dp"
+                app:layout_textSizePercent="5.5%w"
+                android:layout_marginRight="5dp"
+                android:layout_centerInParent="true"
+                android:background="@color/white"
+                android:singleLine="true"
+                android:gravity="center|left"
+                android:textCursorDrawable="@null"
+                android:text="521374"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:layout_toRightOf="@id/img_pwd"/>
+
+        </com.king.percent.support.PercentRelativeLayout>
+        <!--android:background="@drawable/shape_login_btn_layout"-->
+        <TextView
+            android:id="@+id/tv_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/pwd_layout"
+            app:layout_marginTopPercent="10%w"
+            android:text="忘记密码请练习学校管理员!"
+            android:textColor="#b4bad4"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_16"/>
+
+        <ImageView
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_toast"
+            app:layout_heightPercent="17.39%w"
+            android:layout_marginTop="10dp"
+            app:layout_textSizePercent="5%w"
+            app:layout_widthPercent="80%w"
+            android:background="@drawable/login_btn"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_toast"
+            android:layout_marginTop="11dp"
+            android:text="登   录"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20"
+            android:padding="15dp"
+            android:gravity="center"
+            />
+    </com.king.percent.support.PercentRelativeLayout>
+
+</com.king.percent.support.PercentRelativeLayout>

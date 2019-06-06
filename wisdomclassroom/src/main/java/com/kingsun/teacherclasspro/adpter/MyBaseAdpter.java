@@ -1,12 +1,12 @@
 package com.kingsun.teacherclasspro.adpter;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.text.DecimalFormat;
-
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.text.DecimalFormat;
 
 public class MyBaseAdpter  extends BaseAdapter{
 
@@ -53,5 +53,13 @@ public class MyBaseAdpter  extends BaseAdapter{
 		DecimalFormat df = new DecimalFormat("#.##");
 		get_double = Double.parseDouble(df.format(size));
 		return get_double+"";
+	}
+
+	public boolean isNull(String info){
+		boolean sp = false;
+		if (info == null || info .equals("") || info.equals("null")){
+			sp = true;
+		}
+		return  sp;
 	}
 }

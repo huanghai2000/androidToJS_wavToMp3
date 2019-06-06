@@ -6,6 +6,8 @@
     android:layout_height="match_parent" >
 
     <com.king.percent.support.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_heightPercent="100%w"
         app:layout_widthPercent="100%w" >
 

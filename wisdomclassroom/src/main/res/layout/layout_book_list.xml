@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"  >
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tv_bg"
+        app:layout_heightPercent="6%w">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="授课"
+            app:layout_textSizePercent="2%w"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+        <com.king.percent.support.PercentRelativeLayout
+            android:id="@+id/back_layout"
+            android:layout_width="wrap_content"
+            app:layout_widthPercent="10%w"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_finsh"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fanhui"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                app:layout_textSizePercent="12%w"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/img_back"/>
+        </com.king.percent.support.PercentRelativeLayout>
+    </com.king.percent.support.PercentRelativeLayout>
+
+    <com.king.percent.support.PercentRelativeLayout
+        android:id="@+id/choose_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_heightPercent="6%w"
+        android:layout_below="@+id/title_layout"
+        android:layout_alignParentStart="true">
+
+        <com.king.percent.support.PercentLinearLayout
+            android:id="@+id/bookType_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_book_list_bg"
+            android:orientation="vertical"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            app:layout_marginLeftPercent="3%w"
+            app:layout_widthPercent="40%w"
+            app:layout_heightPercent="80%h"
+            android:padding="5dp"
+            android:gravity="center">
+
+            <RadioGroup
+                android:id="@+id/tabs_rg"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:background="#f7f7f7"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp" >
+
+                <RadioButton
+                    android:id="@+id/tab_rb_a"
+                    style="@style/navigation_bottom_radio"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/homework_manage"
+                    android:gravity="center"
+                    android:text="全部教材"
+                    android:textColor="@color/text_select_color"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/line_color"/>
+
+                <RadioButton
+                    android:id="@+id/tab_rb_b"
+                    style="@style/navigation_bottom_radio"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/homework_assign"
+                    android:gravity="center"
+                    android:text="同步教材"
+                    android:textColor="@color/text_select_color"
+                    android:textSize="14sp" />
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/line_color"/>
+
+                <RadioButton
+                    android:id="@+id/tab_rb_c"
+                    style="@style/navigation_bottom_radio"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/home_manager_homework"
+                    android:gravity="center"
+                    android:text="教辅教材"
+                    android:textColor="@color/text_select_color"
+                    android:textSize="14sp" />
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/line_color"/>
+
+                <RadioButton
+                    android:id="@+id/tab_rb_d"
+                    style="@style/navigation_bottom_radio"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/drawable_tese"
+                    android:gravity="center"
+                    android:text="特色教材"
+                    android:textColor="@color/text_select_color"
+                    android:textSize="14sp" />
+            </RadioGroup>
+        </com.king.percent.support.PercentLinearLayout>
+
+        <com.king.percent.support.PercentRelativeLayout
+            android:id="@+id/book_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="80%h"
+            app:layout_widthPercent="13%w"
+            android:layout_centerInParent="true"
+            app:layout_marginLeftPercent="3%w"
+            android:background="@drawable/shape_book_list_bg"
+            android:layout_toRightOf="@id/bookType_layout">
+
+            <TextView
+                android:id="@+id/tv_book"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:textColor="@color/_3b5998"
+                android:gravity="center"
+                app:layout_textSizePercent="12%w"
+                android:text="班级"/>
+
+        </com.king.percent.support.PercentRelativeLayout>
+
+        <com.king.percent.support.PercentRelativeLayout
+            android:id="@+id/down_Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="80%h"
+            app:layout_widthPercent="23%w"
+            app:layout_marginLeftPercent="4%w"
+            android:background="@drawable/shape_book_list_bg"
+            android:layout_alignBaseline="@+id/book_layout"
+            android:layout_alignBottom="@+id/book_layout"
+            android:layout_toEndOf="@+id/book_layout">
+
+            <TextView
+                android:id="@+id/tv_Down"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:textColor="@color/_3b5998"
+                app:layout_textSizePercent="6%w"
+                android:gravity="center"
+                android:text="下载课本"/>
+
+        </com.king.percent.support.PercentRelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_ikOpen"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/down_Layout"
+            android:background="@drawable/shape_book_list_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="80%h"
+            app:layout_widthPercent="6%w"
+            app:layout_marginLeftPercent="4%w"
+            android:textColor="@color/_3b5998"
+            android:gravity="center"
+            android:text="开"/>
+
+    </com.king.percent.support.PercentRelativeLayout>
+
+    <com.kingsun.teacherclasspro.widgets.MyPager
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/choose_layout"
+        android:background="@color/white"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+</com.king.percent.support.PercentRelativeLayout>
+

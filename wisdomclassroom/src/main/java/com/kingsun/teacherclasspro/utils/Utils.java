@@ -1,17 +1,4 @@
 package com.kingsun.teacherclasspro.utils;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -30,7 +17,22 @@ import android.os.Environment;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.WindowManager;
+
+import com.kingsun.teacherclasspro.application.MyApplication;
 import com.kingsun.teacherclasspro.config.Configure;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @ClassName: Utils
@@ -717,7 +719,7 @@ public class Utils {
 
 	/**
 	 * 跳转到易课+
-	 * @param Package
+	 * @param
 	 */
 	public static void gotoXKJ(Activity activity,String packageName,String  info,
 			String className ){
@@ -727,7 +729,7 @@ public class Utils {
 			//			Intent intent = activity.getPackageManager().getLaunchIntentForPackage(packageName);
 			//			intent.putExtra("data", info);
 			//			activity.startActivity(intent);
-
+			MyApplication.getInstance().setGoToIK(true);
 			Intent intent = new Intent();
 			ComponentName cn = new ComponentName(packageName,className);
 			intent.putExtra("data", info);
@@ -771,7 +773,7 @@ public class Utils {
 			return getImageFileIntent(filePath);  
 		}else if(end.equals("apk")){  
 			return getApkFileIntent(filePath);  
-		}else if(end.equals("ppt")){  
+		}else if(end.equals("ppt")||end.equals("pptx")){
 			return getPptFileIntent(filePath);  
 		}else if(end.equals("xls")){  
 			return getExcelFileIntent(filePath);  

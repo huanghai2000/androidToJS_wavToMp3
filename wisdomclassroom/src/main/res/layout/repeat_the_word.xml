@@ -28,6 +28,8 @@
         <com.kingsun.teacherclasspro.widgets.RoundImageView
             android:id="@+id/img_pho"
             android:layout_below="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             app:layout_heightPercent="45%h"
@@ -65,6 +67,7 @@
             <ProgressBar
                 android:id="@+id/pb_dub_startdub"
                 android:layout_height="8dp"
+                android:layout_width="wrap_content"
                 android:layout_marginLeft="5dp"
                 app:layout_marginTopPercent="1.8%w"
                 app:layout_widthPercent="40%w"
@@ -80,6 +83,8 @@
 
         <ImageView
             android:id="@+id/img_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_below="@+id/img_pho"
             android:layout_centerHorizontal="true"
@@ -91,6 +96,8 @@
 
         <ImageView
             android:id="@+id/img_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_below="@+id/img_pho"
             android:layout_centerHorizontal="true"

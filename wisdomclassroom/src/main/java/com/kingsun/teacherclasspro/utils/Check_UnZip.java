@@ -1,22 +1,23 @@
 package com.kingsun.teacherclasspro.utils;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Enumeration;
-import org.apache.tools.zip.ZipEntry;
-import org.apache.tools.zip.ZipFile;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.os.StatFs;
-import android.util.Log;
 
 import com.kingsun.teacherclasspro.config.Constant;
+
+import org.apache.tools.zip.ZipEntry;
+import org.apache.tools.zip.ZipFile;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Enumeration;
 
 public class Check_UnZip extends Thread {
 	private String TAG = "Unzip";
@@ -50,19 +51,23 @@ public class Check_UnZip extends Thread {
 				 */
 				BufferedInputStream bi;
 				ZipFile zf = new ZipFile(file, "GBK");// 支持中文
+//				ZipFile zf = new ZipFile(file);// 支持中文
 				String unZipFileName=null;
 				Enumeration entries = zf.getEntries();
 				int i=0;
 				while (entries.hasMoreElements()) {
 					ZipEntry entry = (ZipEntry) entries.nextElement();
 					String entryName = entry.getName();
-//					Log.i(TAG, "entryName = "+entryName);
+					String enTs = new String(entryName.getBytes(),"GBK");
+//					Log.i(TAG, "entryName = "+entryName+";size = "+entryName.length());
+//					Log.i(TAG, "enTs = "+enTs+";size = "+enTs.length());
 					if(++i==1){
 						unZipFileName=entryName.split("/")[0]+File.separator;
 					}
 					String filePath = unzipTo+"/"+entryName;
+//					Log.i(TAG, "filePath = "+filePath);
 //					Log.i(TAG, "filePath = "+new String(filePath.getBytes(),"GBK"));
-					if (filePath.endsWith(".ppt")) {
+					if (filePath.endsWith(".ppt")||filePath.endsWith(".pptx")) {
 						openName = filePath;
 					}
 					if (entry.isDirectory()) {
@@ -89,7 +94,7 @@ public class Check_UnZip extends Thread {
 				}
 				zf.close();
 				//解压完成
-				Log.e(TAG, "unZipFileName: "+unZipFileName);
+//				Log.e(TAG, "unZipFileName: "+unZipFileName);
 				msg.what=Constant.DOWNLOAD_UNZIP_RESULT;
 				msg.arg1=1;
 				msg.obj=openName;

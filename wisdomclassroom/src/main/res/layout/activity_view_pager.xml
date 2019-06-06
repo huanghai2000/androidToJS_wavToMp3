@@ -10,7 +10,7 @@
 <!--     android:layout_height="fill_parent" -->
 <!--     android:background="@color/blue" /> -->
 
-    <com.kingsun.teacherclasspro.widgets.MyPager
+    <com.example.testapp.MyPager
         android:id="@+id/view_pager"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -27,6 +27,7 @@
         android:paddingBottom="20dp" />
 
     <Gallery
+        android:layout_height="wrap_content"
         android:id="@+id/gallery"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"

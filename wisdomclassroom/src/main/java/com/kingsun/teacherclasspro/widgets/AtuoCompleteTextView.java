@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
-
 import com.kingsun.teacherclasspro.R;
 
 public class AtuoCompleteTextView extends AutoCompleteTextView {
@@ -21,6 +20,7 @@ public class AtuoCompleteTextView extends AutoCompleteTextView {
 			"192.168.3.187:1112/",//马之威主机
 			"192.100.1.254:8000/",//部署主机
 			"192.168.3.98:6060/",//韦帅
+			"192.168.3.115:8022/",//大熊
 			"183.47.42.221:4322/"//外网
 	};  
 
@@ -44,14 +44,14 @@ public class AtuoCompleteTextView extends AutoCompleteTextView {
 
 
 	public void setAdapterString(String[] es) {  
-		if (es != null && es.length > 0)  
-			this.emailSufixs = es;  
-	}  
+		if (es != null && es.length > 0)
+			this.emailSufixs = es;
+	}
 
 
 	private void init(final Context context) {  
-		//adapter中使用默认的emailSufixs中的数据，可以通过setAdapterString来更改  
-		this.setAdapter(new EmailAutoCompleteAdapter(context, R.layout.register_auto_complete_item, emailSufixs));  
+		//adapter中使用默认的emailSufixs中的数据，可以通过setAdapterString来更改
+		this.setAdapter(new EmailAutoCompleteAdapter(context, R.layout.register_auto_complete_item, emailSufixs));
 		//使得在输入1个字符之后便开启自动完成  
 		this.setThreshold(1);  
 		this.setOnFocusChangeListener(new OnFocusChangeListener() {  
@@ -111,15 +111,16 @@ public class AtuoCompleteTextView extends AutoCompleteTextView {
 	}  
 
 
-	private class EmailAutoCompleteAdapter extends ArrayAdapter<String> {  
-		public EmailAutoCompleteAdapter(Context context, int textViewResourceId, String[] email_s) {  
-			super(context, textViewResourceId, email_s);  
-		}  
+	private class EmailAutoCompleteAdapter extends ArrayAdapter<String> {
+		public EmailAutoCompleteAdapter(Context context, int textViewResourceId, String[] email_s) {
+			super(context, textViewResourceId, email_s);
+		}
+
 
 		@Override  
 		public View getView(int position, View convertView, ViewGroup parent) {  
-			Log.i(TAG, "in GetView");  
-			View v = convertView;  
+			Log.i(TAG, "in GetView");
+			View v = convertView;
 			if (v == null)  
 				v = LayoutInflater.from(getContext()).inflate(R.layout.register_auto_complete_item, null);  
 			TextView tv = (TextView) v.findViewById(R.id.tv);  

@@ -1,7 +1,5 @@
 package com.kingsun.teacherclasspro.fragment;
 
-import java.util.ArrayList;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -25,6 +23,8 @@ import com.kingsun.teacherclasspro.utils.Configure;
 import com.kingsun.teacherclasspro.utils.MediaPlayerUtil;
 import com.kingsun.teacherclasspro.utils.ToastUtils;
 import com.kingsun.teacherclasspro.widgets.Override_GridView;
+
+import java.util.ArrayList;
 
 
 /***
@@ -118,6 +118,6 @@ public class M6_M14_Fragment extends BaseFragment implements OnClickListener{
 				ToastUtils.showToast(getActivity(), sp);
 				break;
 			}
-		};
+		}
 	};
 }

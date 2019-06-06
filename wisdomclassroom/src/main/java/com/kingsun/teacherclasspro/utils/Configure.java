@@ -17,5 +17,4 @@ public class Configure {
 			Configure.screenWidth = dm.widthPixels;
 		}
 	}
-
 }

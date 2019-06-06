@@ -14,19 +14,27 @@
     <!-- android:scrollbars="none" > -->
     <!-- </com.kingsun.teacherclasspro.widgets.WebViewMod> -->
 
-    <WebView
+    <com.kingsun.teacherclasspro.widgets.MyWebView
         android:id="@+id/webView_main"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:background="@android:color/transparent"
-        android:scrollbars="none" />
+        android:scrollbars="none" >
+    </com.kingsun.teacherclasspro.widgets.MyWebView>
+
+   <!-- <WebView
+        android:id="@+id/webView_main"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:scrollbars="none" />-->
 
     <Button
         android:id="@+id/login"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentRight="true"
-        android:text="登录"
+        android:layout_height="60dp"
+        android:text="清除缓存"
+        android:layout_centerHorizontal="true"
         android:visibility="gone" />
 
 </RelativeLayout>

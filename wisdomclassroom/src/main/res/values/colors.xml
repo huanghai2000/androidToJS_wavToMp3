@@ -14,6 +14,7 @@
     <color name="black2">#545454</color>
     <color name="black3">#666666</color>
     <color name="black4">#555555</color>
+    <color name="black5">#31364b</color>
     <color name="content_bg">#F0F0F0</color>
     <color name="line_color">#DDDDDD</color>
     <color name="main_df_bg">#33bdc9</color>
@@ -70,4 +71,14 @@
     <color name="start_text_bg">#90949c</color>
     <color name="tv_bg">#3366cc</color>
     <color name="onclick_back">#0099cc</color>
+    <color name="_F7F7F7">#F7F7F7</color>
+    <color name="_3b5998">#3b5998</color>
+    <color name="layout_bg">#e5f5ff</color>
+    <color name="_92a3c5">#92a3c5</color>
+    <color name="class_list_top_3">#4B9EF3</color>
+    <color name="_76777b">#76777b</color>
+    <color name="_b4c0d6">#b4c0d6</color>
+    <color name="_dadada">#dadada</color>
+    <color name="_505050">#505050</color>
+    <color name="_909291">#909291</color>
 </resources>

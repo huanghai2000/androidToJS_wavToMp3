@@ -1,7 +1,4 @@
 package com.kingsun.teacherclasspro.utils;
-import java.util.Iterator;
-import java.util.Map;
-
 import android.content.Context;
 
 import com.android.volley.Request;
@@ -13,6 +10,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.kingsun.teacherclasspro.activity.BaseActivity;
 import com.kingsun.teacherclasspro.bean.KingSoftResultBean;
+
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * get 请求返回Str Vollery进一步封装 1.添加回调 OnQueueComplete 监听请求状态

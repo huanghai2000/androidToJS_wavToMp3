@@ -15,6 +15,7 @@
         <com.king.percent.support.PercentRelativeLayout
             android:id="@+id/layout1"
             android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:layout_centerHorizontal="true"
             app:layout_widthPercent="60%w"
             android:background="@drawable/shape_edtext_bg"
@@ -49,6 +50,7 @@
 
         <TextView
             android:id="@+id/login"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/layout1"
             android:layout_centerHorizontal="true"
@@ -64,6 +66,7 @@
 
     <TextView
         android:id="@+id/version_tv"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

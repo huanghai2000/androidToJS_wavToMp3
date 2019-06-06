@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.king.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_delect_msg_bg"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+    <com.king.percent.support.PercentRelativeLayout
+        android:id="@+id/down_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            app:layout_textSizePercent="5%w"
+            android:text="下载资源进度信息"/>
+
+        <!-- 进度条 -->
+        <ProgressBar
+            android:id="@+id/pb_dub_startdub"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            app:layout_widthPercent="40%w"
+            android:layout_height="8dp"
+            android:background="@drawable/pro2"
+            android:indeterminate="false"
+            android:indeterminateOnly="false"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:padding="2dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/record_item_progress" />
+
+        <com.king.percent.support.PercentRelativeLayout
+            android:id="@+id/manage_d_list_top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_marginRightPercent="1%w"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/pb_dub_startdub"
+            app:layout_widthPercent="15%w"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/tv_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_heightPercent="75%w"
+                app:layout_textSizePercent="20%w"
+                app:layout_widthPercent="75%w"
+                android:background="@drawable/shape_down_file_bg"
+                android:gravity="center"
+                android:text="0/0"
+                android:textColor="@color/white" />
+        </com.king.percent.support.PercentRelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_textSizePercent="3.5%w"
+            android:layout_toRightOf="@id/pb_dub_startdub"
+            android:gravity="center"
+            android:text="0%"
+            android:layout_marginLeft="10dp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black2" />
+
+    </com.king.percent.support.PercentRelativeLayout>
+
+</com.king.percent.support.PercentRelativeLayout>

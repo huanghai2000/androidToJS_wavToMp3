@@ -48,6 +48,11 @@ public class ExitDialog extends Dialog implements View.OnClickListener{
 		//		setCanceledOnTouchOutside(false);
 		//		setCancelable(false);// 设置点击屏幕Dialog不消失
 	}
+
+	public void setText(String info){
+		this.content = info;
+		tv_title.setText(info);
+	}
 	public void showDialog(int x, int y){  
 		Configure.init((Activity) context);
 		View view = View.inflate(context, R.layout.post_dialog,null);
@@ -66,6 +71,12 @@ public class ExitDialog extends Dialog implements View.OnClickListener{
 			height = width *3 / 8;
 			//设置触摸对话框意外的地方取消对话框  
 			setCanceledOnTouchOutside(false); 
+		}else if (x == 6 ) {
+			//表示用户录入微课文件名
+			width = width * 30 / 100;
+			height = width *3 / 8;
+			//设置触摸对话框意外的地方取消对话框
+			setCanceledOnTouchOutside(false);
 		}
 		setContentView(view, new ViewGroup.LayoutParams(width, height));
 		this.type = x ;//就只是在扫二维码的时候使用的，其它时候都是代表x的坐标
@@ -114,6 +125,10 @@ public class ExitDialog extends Dialog implements View.OnClickListener{
 			//输入文件名
 			file_layout.setVisibility(View.VISIBLE);
 			title_layout.setVisibility(View.GONE);
+		}else if (type == 6){
+			file_layout.setVisibility(View.GONE);
+			title_layout.setVisibility(View.VISIBLE);
+			tv_title.setText(content);
 		}
 	}
 	
@@ -136,6 +151,11 @@ public class ExitDialog extends Dialog implements View.OnClickListener{
 				intent.putExtra("path",content);
 				InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);  
 				imm.hideSoftInputFromWindow(ed_fileName.getWindowToken(), 0);//从控件所在的窗口中隐藏
+				postOrCanser.upLoad(intent);
+			}else if (type == 6){
+				//删除教材
+				intent = new Intent();
+				intent.putExtra("position",typeY);
 				postOrCanser.upLoad(intent);
 			}
 			dismiss();

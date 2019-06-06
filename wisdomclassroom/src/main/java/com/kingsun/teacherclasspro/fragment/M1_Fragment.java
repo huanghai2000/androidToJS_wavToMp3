@@ -1,10 +1,6 @@
 package com.kingsun.teacherclasspro.fragment;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
-
+import android.annotation.SuppressLint;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
@@ -31,6 +27,11 @@ import com.kingsun.teacherclasspro.widgets.RoundImageView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import static com.kingsun.teacherclasspro.application.MyApplication.getContext;
 
 /**
@@ -38,6 +39,7 @@ import static com.kingsun.teacherclasspro.application.MyApplication.getContext;
  * @author hai.huang
  *
  */
+@SuppressLint("ValidFragment")
 public class M1_Fragment extends BaseFragment implements OnClickListener{
 	private String TAG = "Fragment";
 	private View layout_View;
